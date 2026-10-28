@@ -875,8 +875,8 @@
                             <p class="text-sm text-slate-400">不再只是被動問答，而是像「私人特助」。給它一個目標（如安排旅遊），它可規劃步驟、搜尋資料並使用工具。訂票等對外行動仍應依使用者授權執行。</p>
                         </div>
                         <div class="bg-slate-900/80 p-5 rounded-xl border border-purple-900/50">
-                            <h5 class="text-purple-400 font-bold mb-2">2. 具身智慧 (Embodied AI)</h5>
-                            <p class="text-sm text-slate-400">讓 AI 擁有物理實體（如機器狗、人形機器人），使其具備「感知環境 → 思考決策 → 實體行動」的能力。</p>
+                            <h5 class="text-purple-400 font-bold mb-2">2. 具身智慧／具身 AI (Embodied AI)</h5>
+                            <p class="text-sm text-slate-400">AI 透過身體形成「感知 → 決策 → 行動 → 回饋」的循環。載體可為機械手臂、機器人或自駕車；部分研究也包含虛擬身體。它與 Physical AI 高度重疊，兩者的側重與應用見 <a href="#ch3-embodied-physical" style="text-decoration:underline">3-6 延伸說明</a>。</p>
                         </div>
                         <div class="bg-slate-900/80 p-5 rounded-xl border border-purple-900/50">
                             <h5 class="text-purple-400 font-bold mb-2">3. 主權 AI (Sovereign AI)</h5>
@@ -896,7 +896,7 @@
   </tbody></table></div>
   <p>投影片將AI演進分為四波：早期的問題探索與規則推理、專家系統、以資料驅動的機器學習，以及生成式AI與多模態模型。這是本教材的歷史整理方式，重點在於<strong>方法如何從人工寫規則，轉向從資料學習，再發展出生成內容與使用工具的能力</strong>，不是所有技術都在新階段出現後被取代。</p>
   <p><strong>情感AI（Affective AI）</strong>也是投影片列出的趨勢：分析語氣、表情或生理訊號，推估使用者的情緒狀態。例如教學系統可依學生表現調整提示。這些是情緒線索的推估，不等於機器本身具有情感，也不保證判斷正確。</p>
-  <p><strong>辨別五種趨勢：</strong>AI代理重視目標、規劃與執行；具身智慧重視感測與實體行動；主權AI重視自主的模型、資料與運算資源；情感AI重視情緒線索；可解釋性AI重視讓人理解決策依據。AI代理在訂票或下單等行動中，仍應依授權範圍執行。</p>
+  <p><strong>辨別五種趨勢：</strong>AI代理重視目標、規劃與執行；具身智慧重視身體與環境之間的感知、行動及回饋；主權AI重視自主的模型、資料與運算資源；情感AI重視情緒線索；可解釋性AI重視讓人理解決策依據。AI代理在訂票或下單等行動中，仍應依授權範圍執行。</p>
   <p class="source-note">對應投影片：第4–13頁。</p>
 
   </div></section>
@@ -1108,6 +1108,93 @@
   <p><strong>機器人基礎模型：</strong>教材介紹結合視覺、語言與動作的研究方向，目標是讓機器人能理解指令並在不同情境完成任務。具體能力取決於模型、機構、感測器、資料與驗證結果，不能只因能聽懂一句話就推定它能安全完成所有實體工作。</p>
   <p class="source-note">對應投影片：第75–92頁。</p>
 </div></section>
+
+                <!-- BEGIN EMBODIED-PHYSICAL-AI SUPPLEMENT -->
+                <section id="ch3-embodied-physical" class="scroll-mt-24" aria-labelledby="embodied-physical-heading">
+                  <div class="study-supplement">
+                    <p class="eyebrow">延伸學習 / 從理解指令到與環境互動</p>
+                    <h3 id="embodied-physical-heading">3-6 延伸｜具身 AI 與 Physical AI</h3>
+                    <p><strong>學習重點：</strong>說明具身智慧／具身 AI 與 Physical AI 的意義，辨別兩者的共同處與側重，並用生活情境分析「感知、行動與回饋」。</p>
+
+                    <h4>一、兩個名詞，先看它們強調什麼</h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                      <div class="ai-panel p-5 rounded-xl">
+                        <h4>具身智慧／具身 AI</h4>
+                        <p><strong>具身智慧（Embodied Intelligence）</strong>強調智慧與身體、環境的共同作用。在人工智慧領域，<strong>具身 AI（Embodied Artificial Intelligence）</strong>透過具有感知與行動能力的載體，觀察環境、執行任務，再依結果調整行為。</p>
+                        <p>「身體」可以是機械手臂、輪型機器人或自駕車；部分研究也包含在三維環境中感知與行動的<strong>虛擬身體</strong>。重點是身體的能力與限制如何影響任務，而非外型是否像人。<a href="#ch3-epa-source-1" style="text-decoration:underline" aria-label="參考資料1：Habitat">[1]</a> <a href="#ch3-epa-source-2" style="text-decoration:underline" aria-label="參考資料2：NVIDIA具身AI">[2]</a></p>
+                      </div>
+                      <div class="ai-panel p-5 rounded-xl">
+                        <h4>Physical AI</h4>
+                        <p><strong>Physical AI</strong>可理解為「在物理世界中運作的人工智慧」。在當前常見用法中，它讓機器或物理系統結合感測、推理、規劃與控制，在真實環境中完成任務。</p>
+                        <p>例如機器人搬運物品、自駕車因應路況，或智慧工廠協調設備與車隊。系統需要處理空間、接觸、摩擦、時間延遲及現場變化；其範圍也可包括攝影機、感測器與設備共同構成的智慧空間。<a href="#ch3-epa-source-3" style="text-decoration:underline" aria-label="參考資料3：NVIDIA Physical AI">[3]</a> <a href="#ch3-epa-source-4" style="text-decoration:underline" aria-label="參考資料4：Microsoft Physical AI">[4]</a></p>
+                      </div>
+                    </div>
+                    <p class="study-note"><strong>關係要記清楚：</strong>兩者高度重疊，同一套 AI 機器人可以同時符合兩者。下列比較整理的是<strong>強調的角度</strong>；不同研究與產業的定義不完全相同，不宜直接畫成固定的包含關係，也不能把「學術用語／產業用語」當成嚴格分界。</p>
+
+                    <h4>二、用「把杯子拿給我」理解感知與行動</h4>
+                    <p>假設一台具備適當感測器與夾爪的機器人接到這項指令，它需要完成以下循環：</p>
+                    <ol>
+                      <li><strong>感知：</strong>找到杯子的位置、朝向與周圍障礙物，確認手臂目前在哪裡。</li>
+                      <li><strong>判斷與規劃：</strong>決定抓杯身或杯柄，規劃手臂能到達且避免碰撞的路徑。</li>
+                      <li><strong>行動：</strong>控制馬達與夾爪接近、抓取並移動杯子。</li>
+                      <li><strong>回饋與修正：</strong>重新觀察杯子是否拿穩；若杯子被移動或抓取失敗，就調整位置、力道或下一步計畫。</li>
+                    </ol>
+                    <p class="study-note"><strong>感知 → 判斷 → 行動 → 環境回饋 → 再感知。</strong>動作會改變環境，改變後的環境又影響下一次動作，這稱為「感知—行動閉環」。此處是教學情境，實際可用的回饋取決於感測器與控制設計。</p>
+                    <p><strong>身體為什麼重要？</strong>手臂長度影響能碰到哪裡，夾爪形狀影響怎麼抓，攝影機位置影響看得到什麼。從這些限制分析任務，是具身智慧的觀點；從整套系統如何在現場可靠完成拿取任務來分析，則是 Physical AI 常見的應用觀點。<a href="#ch3-epa-source-4" style="text-decoration:underline">[4]</a> <a href="#ch3-epa-source-7" style="text-decoration:underline">[7]</a></p>
+
+                    <h4>三、具身 AI 與 Physical AI 比較</h4>
+                    <div class="table-scroll" role="region" aria-label="具身AI與Physical AI比較表，可水平捲動" tabindex="0"><table>
+                      <thead><tr><th scope="col">比較面向</th><th scope="col">具身智慧／具身 AI</th><th scope="col">Physical AI</th></tr></thead>
+                      <tbody>
+                        <tr><th scope="row">主要強調</th><td>身體、感知、行動與環境如何共同影響智慧行為。</td><td>AI 如何理解物理環境，並整合系統完成現實任務。</td></tr>
+                        <tr><th scope="row">觀察角度</th><td>身體能力、視角與動作限制，以及互動回饋如何影響下一步。</td><td>感測、推理、規劃與控制如何協作，因應物理限制及現場變化。</td></tr>
+                        <tr><th scope="row">常見載體或系統</th><td>機械手臂、移動機器人、自駕車；部分研究也納入虛擬具身代理。</td><td>機器人、自駕車、工業設備，以及多種設備組成的智慧空間。</td></tr>
+                        <tr><th scope="row">模擬的角色</th><td>可研究虛擬身體在三維環境中的導航、操作與互動。</td><td>常用模擬或數位孿生訓練、驗證與規劃，再評估實體系統的表現。</td></tr>
+                        <tr><th scope="row">兩者的交集</th><td colspan="2">AI 機器人依現場感測資料調整抓取或避障行為，通常可以同時用兩個名詞描述。模擬與實體也不是兩者的硬性分界。</td></tr>
+                      </tbody>
+                    </table></div>
+                    <p class="source-note">本表為教學整理，依據資料 [1]–[4] 的常見用法。兩者都會研究感知、規劃、學習與控制，並非各自只負責表中的一側。</p>
+                    <p><strong>和 AI 代理的關係：</strong>AI 代理強調朝目標規劃並執行任務。若它透過機器人的感測器與動作系統工作，也可以同時是具身 AI 與 Physical AI；單純整理文件或操作網頁的代理，通常不會因此被歸入這兩類。</p>
+
+                    <h4>四、應用：把感知、行動與回饋連起來</h4>
+                    <p>下列為應用與課堂設計情境；實際能力仍須依設備、資料、任務與測試結果判斷。</p>
+                    <div class="table-scroll" role="region" aria-label="具身AI及Physical AI應用表，可水平捲動" tabindex="0"><table>
+                      <thead><tr><th scope="col">場景</th><th scope="col">感知 → 行動 → 回饋的例子</th><th scope="col">如何理解兩個名詞</th></tr></thead>
+                      <tbody>
+                        <tr><th scope="row">工廠分揀與組裝</th><td>辨識零件位置 → 調整手臂並抓取 → 確認零件是否拿穩或裝妥。</td><td>操作技能可用具身 AI 分析；整合產線、設備與現場運作，也屬 Physical AI 的應用方向。</td></tr>
+                        <tr><th scope="row">倉儲與物流</th><td>讀取地圖與障礙物 → 規劃路線、搬運貨物 → 遇到行人或通道受阻時重新規劃。</td><td>自主搬運機器人通常同時涉及兩者；多車協調也需要環境與設備整合。</td></tr>
+                        <tr><th scope="row">自駕與智慧移動</th><td>辨識車道、車輛與行人 → 決定轉向或煞車 → 持續依新的路況調整。</td><td>車輛本身就是感知與行動的載體，也是 Physical AI 面向物理世界的典型系統。</td></tr>
+                        <tr><th scope="row">照護環境的物品配送</th><td>確認目標物與目的地 → 搬運或遞送日用品 → 確認抵達及交付狀態。</td><td>可作為兩者結合的設計情境；涉及人身接觸時，需要相應的安全設計與情境驗證。</td></tr>
+                        <tr><th scope="row">遊戲與三維模擬教學</th><td>角色依自身視角找紅色杯子 → 繞過障礙並搬到桌面 → 檢查是否完成。</td><td>具有感知與行動限制的虛擬角色可作具身 AI 研究；若用來訓練或驗證真實機器人，也可納入 Physical AI 的開發流程。</td></tr>
+                      </tbody>
+                    </table></div>
+                    <p class="source-note">應用方向參考 [1]、[3]、[4]；具體流程為依上述原理設計的教學例子。只有外觀與預錄動作的 Avatar，尚不足以說明它具備具身 AI 的感知與行動能力。</p>
+
+                    <h4>五、容易混淆的觀念</h4>
+                    <ul>
+                      <li><strong>人形與大型模型都不是必要條件：</strong>具身系統可使用不同身體，也可結合傳統演算法與學習方法。視覺—語言—動作模型（VLA）、強化學習與模仿學習是可用技術，不是名稱的判定標準。<a href="#ch3-epa-source-1" style="text-decoration:underline">[1]</a> <a href="#ch3-epa-source-8" style="text-decoration:underline">[8]</a></li>
+                      <li><strong>回饋調整不等於每次重新訓練：</strong>系統可以運用已學得的模型或既有控制器修正動作。傳統機器人也可能有感知、路徑規劃與回饋控制；不能只以「有沒有回饋」區分新舊技術。<a href="#ch3-epa-source-8" style="text-decoration:underline">[8]</a></li>
+                      <li><strong>模擬成功不保證實機成功：</strong>模擬與實體可能在摩擦、接觸、相機影像或控制延遲上不同。Sim-to-Real（模擬到實體遷移）需要實機驗證，必要時調整模型、模擬條件或控制設定。<a href="#ch3-epa-source-5" style="text-decoration:underline">[5]</a></li>
+                      <li><strong>Physical AI 與 Physics AI 要看使用情境：</strong>以 AI 預測流體、材料或其他物理現象，常在 Physics AI／科學機器學習中討論。這些模型可支援 Physical AI 的設計與模擬，但僅做物理預測，不足以直接判定它是能與環境互動的 Physical AI 系統。<a href="#ch3-epa-source-3" style="text-decoration:underline">[3]</a> <a href="#ch3-epa-source-6" style="text-decoration:underline">[6]</a></li>
+                    </ul>
+                    <p class="study-note"><strong>課堂辨識：</strong>看到會動的裝置時，先問「它感知了什麼？如何決定動作？結果如何影響下一步？」；再看討論焦點是身體與環境的關係，或整套系統的物理世界應用。名稱本身不保證系統具有通用智慧、意識或已能處理所有陌生情境。</p>
+
+                    <h4>延伸閱讀與資料來源</h4>
+                    <p class="source-note">Physical AI 也有學術研究脈絡：至少在 2020 年，Miriyev 與 Kovač 的論文已討論身體、材料、感測與控制的共同設計。因此，本節以「側重角度」輔助理解，不把兩個名詞切成學術與產業兩個領域。<a href="#ch3-epa-source-7" style="text-decoration:underline">[7]</a></p>
+                    <ol class="source-note">
+                      <li id="ch3-epa-source-1"><a href="https://aihabitat.org/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Habitat：具身 AI 的定義、虛擬載體與模擬研究</a></li>
+                      <li id="ch3-epa-source-2"><a href="https://www.nvidia.com/en-us/glossary/embodied-ai/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">NVIDIA：What Is Embodied AI?</a></li>
+                      <li id="ch3-epa-source-3"><a href="https://www.nvidia.com/en-us/glossary/generative-physical-ai/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">NVIDIA：What Is Physical AI?</a></li>
+                      <li id="ch3-epa-source-4"><a href="https://www.microsoft.com/en-us/research/collaboration/physical-ai-research/" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Microsoft Research：Physical AI research</a></li>
+                      <li id="ch3-epa-source-5"><a href="https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-lab/latest/robot-learning-fundamentals/08-simulation-to-reality.html" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">NVIDIA Isaac Lab：Simulation to Reality</a></li>
+                      <li id="ch3-epa-source-6"><a href="https://developer.nvidia.com/physicsnemo" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">NVIDIA PhysicsNeMo：Physics AI 與工程物理模擬</a></li>
+                      <li id="ch3-epa-source-7"><a href="https://doi.org/10.1038/s42256-020-00258-y" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Miriyev &amp; Kovač（2020）：Skills for physical artificial intelligence</a></li>
+                      <li id="ch3-epa-source-8"><a href="https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-lab/latest/robot-learning-fundamentals/01-motivation-and-definition.html" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">NVIDIA Isaac Lab：傳統控制、機器人學習與回饋</a></li>
+                    </ol>
+                    <p class="source-note">本節為延伸補充；資料查核日期：2026-10-29。講義文字可離線閱讀，外部參考資料需連網開啟。</p>
+                  </div>
+                </section>
+                <!-- END EMBODIED-PHYSICAL-AI SUPPLEMENT -->
 
                 <!-- ================= CH3 互動測驗 ================= -->
                 <section id="ch3-quiz" class="quiz-section" aria-labelledby="quiz-heading-3">
