@@ -147,6 +147,38 @@
 }
 
 </style>
+
+<!-- BEGIN CHAPTER 2 HARDWARE DIAGRAM STYLES -->
+<style id="ch2-hardware-diagram-styles">
+#ch2-hardware-overview{margin:0 0 32px}
+#ch2-hardware-overview h4{margin:0 0 12px;font-size:21px;line-height:1.6;color:#163f65}
+#ch2-hardware-overview .hardware-figure{margin:18px 0 10px}
+#ch2-hardware-overview .hardware-image-link{display:block;overflow:hidden;border:1px solid #d8e3ec;border-radius:12px;background:#fbfaf5}
+#ch2-hardware-overview .hardware-image-link img{display:block;width:100%;max-width:100%;height:auto}
+#ch2-hardware-overview figcaption{margin-top:10px;font-size:14px;line-height:1.8;color:#475569}
+#ch2-hardware-overview .hardware-image-actions{display:flex;flex-wrap:wrap;gap:12px 22px;margin:10px 0 18px}
+#ch2-hardware-overview .hardware-image-actions a{display:inline-flex;align-items:center;min-height:44px;color:#086b82;font-weight:650;text-decoration:underline;text-underline-offset:3px}
+#ch2-hardware-overview .hardware-flow-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#ch2-hardware-overview h5{display:flex;align-items:center;gap:10px;margin:0 0 8px;font-size:17px;font-weight:750;line-height:1.7;color:#163f65}
+#ch2-hardware-overview .hardware-flow-grid p{margin:0}
+#ch2-hardware-overview .hardware-line{display:inline-block;position:relative;flex:0 0 42px;height:0;border-top:3px solid #2278ae;color:#2278ae}
+#ch2-hardware-overview .hardware-line::after{content:"";position:absolute;right:-1px;top:-6px;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;border-left:8px solid currentColor}
+#ch2-hardware-overview .hardware-line-control{border-top-style:dashed;border-top-color:#cf6d17;color:#cf6d17}
+#ch2-hardware-overview .hardware-cpu-note{margin-top:22px;padding:16px 18px;border-left:3px solid #08758b;background:#eef7fa;border-radius:0 10px 10px 0}
+#ch2-hardware-overview .hardware-cpu-note p{margin:6px 0 0}
+#ch2-hardware-overview .hardware-scope{margin-top:14px;font-size:14px;line-height:1.8;color:#475569}
+#ch2-hardware-overview .source-note a{color:#086b82;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:640px){
+  #ch2-hardware-overview .hardware-flow-grid{grid-template-columns:1fr;gap:18px}
+  #ch2-hardware-overview h4{font-size:19px}
+  #ch2-hardware-overview .hardware-cpu-note{padding:14px}
+}
+@media print{
+  #ch2-hardware-overview .hardware-figure{break-inside:avoid}
+  #ch2-hardware-overview .hardware-image-actions{display:none}
+}
+</style>
+<!-- END CHAPTER 2 HARDWARE DIAGRAM STYLES -->
 </head>
 <body class="bg-slate-50 text-slate-800">
 
@@ -656,6 +688,50 @@
 
                 <section id="ch2-3" class="scroll-mt-24 mb-16">
                     <h3 class="text-2xl font-bold mb-6 flex items-center text-white"><span class="bg-cyan-500 text-slate-900 px-3 py-1 rounded-md mr-3 shadow-[0_0_10px_rgba(6,182,212,0.8)]">2-3</span> 電腦基本架構 (馮紐曼架構)</h3>
+                    <!-- BEGIN CHAPTER 2 HARDWARE OVERVIEW -->
+                    <div id="ch2-hardware-overview" class="study-supplement" role="region" aria-labelledby="ch2-hardware-heading">
+                        <h4 id="ch2-hardware-heading">圖解｜電腦硬體五大部門、資料流與控制流</h4>
+                        <p>電腦硬體可依功能分成輸入、記憶、算術邏輯、控制與輸出五大部門。先看下圖的整體關係，再閱讀下方的 CPU 運作週期與各項硬體說明。</p>
+
+                        <figure class="hardware-figure">
+                            <a class="hardware-image-link" href="./computer_hardware_five_units.png" target="_blank" rel="noopener noreferrer" aria-label="開啟電腦硬體五大部門圖的原尺寸圖片">
+                                <img
+                                    src="./computer_hardware_five_units.png"
+                                    alt="電腦硬體五大部門圖。藍色實線：輸入到記憶、記憶到輸出、記憶與算術邏輯單元雙向傳送資料與結果，記憶另將指令送往控制單元。橘色虛線：控制單元指向輸入、記憶、算術邏輯及輸出單元。CPU 外框包含控制單元與算術邏輯單元。"
+                                    width="2560"
+                                    height="1440"
+                                    loading="lazy"
+                                    decoding="async"
+                                    aria-describedby="ch2-hardware-caption"
+                                >
+                            </a>
+                            <figcaption id="ch2-hardware-caption">圖 2-1　電腦硬體五大部門：藍色實線表示資料與指令的傳遞，橘色虛線表示控制訊號；CPU 外框標示控制與運算的核心範圍。</figcaption>
+                        </figure>
+                        <p class="hardware-image-actions">
+                            <a href="./computer_hardware_five_units.png" target="_blank" rel="noopener noreferrer">開啟原尺寸圖片</a>
+                            <a href="./computer_hardware_five_units.png" download="computer_hardware_five_units.png">下載圖片（PNG）</a>
+                        </p>
+
+                        <div class="hardware-flow-grid">
+                            <div>
+                                <h5><span class="hardware-line" aria-hidden="true"></span>資料流：資料往哪裡走？</h5>
+                                <p><strong>藍色實線</strong>呈現「輸入單元 → 記憶單元 → 輸出單元」的基本方向。記憶單元與算術邏輯單元（ALU）之間可雙向傳送待處理資料與運算結果；記憶單元也會把<strong>指令送至控制單元（CU）</strong>。</p>
+                            </div>
+                            <div>
+                                <h5><span class="hardware-line hardware-line-control" aria-hidden="true"></span>控制流：誰協調各單元？</h5>
+                                <p><strong>橘色虛線</strong>表示控制單元發出的控制訊號。CU 讀取、解讀指令後，協調輸入、記憶、運算與輸出單元，例如安排讀取資料、執行運算與寫入結果的時機。</p>
+                            </div>
+                        </div>
+
+                        <div class="hardware-cpu-note">
+                            <h5>CPU（中央處理器）的範圍與功能</h5>
+                            <p>CPU 以<strong>控制單元（CU）</strong>與<strong>算術邏輯單元（ALU）</strong>為核心：CU 負責解讀指令與協調運作，ALU 負責算術運算、大小比較與邏輯判斷。實際 CPU 還包含暫存器、快取等元件；圖中的<strong>主記憶體（RAM）位於 CPU 外部</strong>。</p>
+                        </div>
+                        <p class="hardware-scope"><strong>圖解範圍：</strong>本圖為基本功能示意，省略匯流排、I/O 控制器及狀態回報等細節。實際資料傳送會依硬體架構與操作方式而異。</p>
+                        <p class="source-note">CPU 組成與運作參考：<a href="https://www.arm.com/glossary/cpu" target="_blank" rel="noopener noreferrer">Arm — What is a Central Processing Unit?</a></p>
+                    </div>
+                    <!-- END CHAPTER 2 HARDWARE OVERVIEW -->
+
                     
                     <div class="flex flex-col lg:flex-row gap-8">
                         <!-- CPU 動畫區塊 -->
